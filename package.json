@@ -1,0 +1,18 @@
+{
+  "name": "socialmediaapi",
+  "version": "1.0.0",
+  "description": "Designing routes for Social Media platform - backend only",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dayjs": "^1.11.10",
+    "express": "^4.18.2",
+    "mongoose": "^7.5.4"
+  }
+}
