@@ -13,20 +13,22 @@ const userQueries = {
     },
 
     getOneUser(req, res) {
+        console.log('I got to the getOneUser')
         User.findOne({ _id: req.params.userId })
             .select('-__v')
             .then((user) => {
-                !user ? res.status(404).json({message:'No user found with this ID'}): res.json(users)
+                !user ? res.status(404).json({ message: 'No user found with this ID' }) : res.json(user)
             })
             .catch((err) => {
+                console.log(err)
                 res.status(500).json(err)
             })
     },
 
     createUser(req, res) {
         User.create(req.body)
-        .then((user) => res.json(user))
-        .catch ((err) =>  res.status(500).json(err))
+            .then((user) => res.json(user))
+            .catch((err) => res.status(500).json(err))
     }
 }
 
